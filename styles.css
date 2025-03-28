@@ -4,6 +4,7 @@ nav {
     justify-content: space-between;
     margin: auto;
     padding: 5px 10px;
+    
 }
 .links {
     justify-content: center;
@@ -11,6 +12,19 @@ nav {
 }
 .links a {
     margin: 0 5px 0 0;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+    color: green;
+}
+.links a:hover {
+    background-color: black;
+    color:antiquewhite;
+}
+.links a:visited {
+    background-color: black;
+    color:antiquewhite;
 }
 .name {
     justify-content: center;
@@ -25,21 +39,23 @@ nav {
 .grid-container {
     display: grid;
     grid-template-columns: 200px 1fr 1fr;
-    grid-template-rows: 1fr 1fr auto auto auto;
+    grid-template-rows: repeat(5,auto) ;
     grid-template-areas:
         "img announcement announcement"
-        "description description description"
+        "img description description"
         "projects projects projects"
         "projects projects projects"
         "tolearn tolearn tolearn";
-    border: 1px solid black;
-    grid-gap: 2px;
-}
-.grid-container > div {
   
+    grid-gap: 2px;
+    grid-auto-flow: dense;
+}
+
+.grid-container > div {
+
     text-align: center;
     color: whitesmoke;
-    border: 1px solid black;
+   
     display: flex;
     align-items: center; /* Ensures vertical alignment */
     justify-content: center; /* Centers content */
@@ -64,18 +80,138 @@ nav {
 }
 .announcement {
  grid-area: announcement;
+ display: flexbox;
+ align-items: start;
 }
 .description {
     grid-area: description;
     display: flex;
+    flex-direction: column;
+  
+}
+.description p {
+    text-align: left;
 }
 
 .projects {
     grid-area: projects;
 }
+
+.projects ul {
+    justify-items: start;
+}
+.projects  li {
+    padding: 5px;
+    text-align: left;
+}
 .tolearn {
     grid-area: tolearn;
+    display: flex;
+    flex-direction: column;
+}
+.tolearn ul {
+    justify-items: start;
+}
+.tolearn li {
+    padding: 5px;
+}
+.tolearn p {
+    text-align: left;
 }
 body {
-    background-color:  rgba(206, 110, 32, 0.911)
+    background-color:  rgba(170, 96, 35, 0.911);
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+.name p {
+    font-size: 1.5em;
+    font-family: fantasy;
+    font-style: italic;
+    text-decoration: overline;
+    text-shadow: 2px 2px beige ;
+    background-color: brown;
+    border-radius: 10px;
+    padding: 15px;
+}
+nav img{
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer a {
+    color: green;
+    text-decoration: none;
+    background-color: rgb(214, 202, 202);
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+}
+footer div a{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer h2 {
+    background-color: rgb(214, 202, 202);
+    padding: 5px;
+    border-radius: 10px;
+}
+footer a:hover {
+    background-color: black;
+    color:antiquewhite;
+}
+form {
+    width: 100%;
+    max-width: 600px; /* Better for responsiveness */
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Prevent overflow */
+}
+textarea {
+    height: 100px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    align-self: flex-start; /* Align submit button to left */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
 }
